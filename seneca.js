@@ -1272,7 +1272,8 @@ intern.execute_action = function(
   data.result = []
   data.timelimit = Date.now() + data.meta.timeout
 
-  private$.history.add(data)
+  // The following test is missing
+  if (opts.$.history.active) private$.history.add(data)
 
   if (opts.$.legacy.meta) {
     data.msg.meta$ = meta
